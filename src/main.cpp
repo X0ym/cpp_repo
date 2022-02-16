@@ -10,5 +10,6 @@ using namespace std;
 
 int main() {
     cout << "Hello, World!" << endl;
+    cout << "cpp" << endl;
     return 0;
 }
