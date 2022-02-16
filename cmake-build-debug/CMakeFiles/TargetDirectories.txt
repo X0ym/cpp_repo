@@ -1,3 +1,0 @@
-/Users/xieym/MyWorkspace/mycode/CLionProjects/cpp_repo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/xieym/MyWorkspace/mycode/CLionProjects/cpp_repo/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/xieym/MyWorkspace/mycode/CLionProjects/cpp_repo/cmake-build-debug/CMakeFiles/cpp_repo.dir
