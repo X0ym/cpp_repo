@@ -1,7 +1,0 @@
-D:/workspace/cpp_repo/cmake-build-debug/CMakeFiles/CMakeCXXCompilerId.dir
-D:/workspace/cpp_repo/cmake-build-debug/CMakeFiles/test.dir
-D:/workspace/cpp_repo/cmake-build-debug/CMakeFiles/testch3.dir
-D:/workspace/cpp_repo/cmake-build-debug/CMakeFiles/main.dir
-D:/workspace/cpp_repo/cmake-build-debug/CMakeFiles/cpp_repo.dir
-D:/workspace/cpp_repo/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/workspace/cpp_repo/cmake-build-debug/CMakeFiles/rebuild_cache.dir

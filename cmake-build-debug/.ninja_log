@@ -1,8 +1,0 @@
-# ninja log v5
-2	274	6757150388958370	CMakeFiles/cpp_repo.dir/src/main.cpp.obj	e2feb627c38c8051
-274	384	6757150390008315	cpp_repo.exe	73c757d9163585fe
-0	398	6757150136528557	CMakeFiles/testch3.dir/src/C++_Primer_Plus/ch3/testch3.cpp.obj	573a6bf666a29aba
-9	258	6752405916026703	CMakeFiles/cpp_repo.dir/src/C++_Primer_Plus/ch2/main.cpp.obj	4be947b400ab9806
-0	256	6752412707067159	CMakeFiles/test.dir/src/C++_Primer_Plus/ch2/test.cpp.obj	6e6305e1a2d145e2
-257	396	6752412708443067	test.exe	8f50c45a8b96740a
-398	563	6757150138150648	testch3.exe	fcecd10484d5fce9

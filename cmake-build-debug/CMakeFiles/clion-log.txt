@@ -1,8 +1,0 @@
-"D:\soft\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/soft/CLion 2022.1/bin/ninja/win/ninja.exe" -G Ninja -S D:\workspace\cpp_repo -B D:\workspace\cpp_repo\cmake-build-debug
-    -- src/CMakeCXXCompilerId.cpp will be compiled to bin/CMakeCXXCompilerId
-    -- src/test.cpp will be compiled to bin/test
-    -- src/testch3.cpp will be compiled to bin/testch3
-    -- src/main.cpp will be compiled to bin/main
--- Configuring done
--- Generating done
--- Build files have been written to: D:/workspace/cpp_repo/cmake-build-debug
