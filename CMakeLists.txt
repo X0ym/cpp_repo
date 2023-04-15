@@ -12,7 +12,3 @@ foreach (file ${files})
 endforeach ()
 
 include_directories(src)
-
-add_executable(cpp_repo
-        src/main.cpp
-        )
