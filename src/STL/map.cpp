@@ -20,7 +20,7 @@ int main()
     };
 
     // multimap的定义和初始化与 map 一致
-    multimap<string, int> m2 = {
+    multimap<string, string> m2 = {
         {"key1", "value1"},
         {"key2", "value2"},
 
