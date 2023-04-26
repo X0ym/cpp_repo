@@ -20,8 +20,14 @@ int main()
     for (int i = 0; i < v11.size(); i ++) 
         cout << v11[i] << " ";
     cout << endl;
-    // 注意：不能使用下标修改元素值
+    // 2) at()
+    cout << "v11.at(2)= " << v11.at(2) << endl; // v11.at(2)= 3
+    // 3) front()
+    cout << "v11.front()= " << v11.front() << endl; // 2
+    // 4) back()
+    cout << "v11.back()= " << v11.back() << endl; // 4
 
+    // 2.2 vector 遍历
     for(vector<int>::iterator it = v11.begin(); it != v11.end(); it ++)
         cout << *it << " ";
     cout << endl;
@@ -40,10 +46,26 @@ int main()
         cout << i << " ";
     }
     cout << endl;
-        
-
-    // 2.2 push_back() 和 pop_back()
     
+
+    // 2.3 clear() push_back() 和 pop_back()
+    vector<int> v12;
+    v12.push_back(5);
+    v12.pop_back();
+    v12.push_back(10);
+    for(auto i : v12) cout << i ; cout << endl;
+    v12.insert(v12.begin(), 5);
+    v12.insert(v12.begin() + 2, 20);
+    v12.insert(v12.end(), 30);
+    for(auto i : v12) cout << i << " " ; cout << endl;
+
+    v12.clear();
+    cout << "after clear. v0.size()= " << v12.size() << endl;
+
+    // 2.4 
+    vector<string> v13 = {"google", "microsoft", "cloudflare"};
+    v13[1] = "baidu";
+    cout << v13[1] << endl;
 
     return 0;
 
