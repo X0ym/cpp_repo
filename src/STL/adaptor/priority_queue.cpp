@@ -29,7 +29,7 @@ std::priority_queue<std::pair<int, int>,
 常数复杂度
 - top() 访问堆顶元素，优先队列不能为空
 - empty() 容器是否为空
-- size() 查询容器中的元素数量
+- size() 查询容器中的元素数量   
 
 对数复杂度
 - push(x) 插入元素，对底层容器排序
@@ -38,6 +38,22 @@ std::priority_queue<std::pair<int, int>,
 */
 int main()
 {
+    // 默认最大堆，
+    priority_queue<int> q1;
+    priority_queue<int, vector<int> > q2;
+    priority_queue<int, vector<int>, greater<int> > q3;
+
+    vector<int> v = {1, 2, 3, 4, 5};
+
+    for (int i = 0; i < v.size(); i ++)
+    {
+        q1.push(v[i]);
+        q3.push(v[i]);
+
+        cout << "q1.top()= " << q1.top() << endl;
+        cout << "q3.top()= " << q3.top() << endl;
+        cout << endl;
+    } 
 
     return 0;
 }
