@@ -15,6 +15,10 @@ set 不允许两个元素有相同的键值。不能通过 set 的迭代器去�
 set 内部通常采用红黑树实现，与数学中集合相似，set 中不存在值相等的元素；
 如果需要有相同的元素的集合，可使用 multiset 。两者的使用方法基本相同
 
+set 和 multiset 定义在头文件 set 中
+无序的 unordered_set 和 unordered_multiset 定义在头文件 unordered_set
+
+
 插入和删除操作
 
 - insert(x) 将元素 x 插入到 set 中
@@ -29,14 +33,14 @@ insert 函数的返回值类型是 pair<iterator, bool>，iterator 是一个指�
 
 查找操作
 
-- count(x)  返回 set 中值为 x 的元素数量
+- count(x)  返回 set 中值为 x 的元素数量，返回值类型 set<T>::size_type
 - find(x)   set 内存在值为 x 的元素时会返回该元素的迭代器，否则返回 end()
 - lower_bound(x) 返回指向首个不小于给定键的元素的迭代器。如果不存在这样的元素，
     返回 end()。
 - upper_bound(x) 返回指向首个大于给定键的元素的迭代器。如果不存在这样的元素，
     返回 end()。
 - empty() 返回容器是否为空。
-- size() 返回容器内元素个数。
+- size() 返回容器内元素个数，返回值类型 set<T>::size_type 。
 
 */
 int main()
@@ -58,6 +62,9 @@ int main()
             cout << "s1 has " << *p.first << endl;
         }
     }
+
+    set<int>::size_type size_set = s1.size();
+    cout << "s1.size()= " << size_set << endl;
 
     // find(x) coutn(x)
     if (s1.find(4) != s1.end()) {

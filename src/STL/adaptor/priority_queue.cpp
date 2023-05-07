@@ -41,6 +41,9 @@ int main()
     // 默认最大堆，
     priority_queue<int> q1;
     priority_queue<int, vector<int> > q2;
+    priority_queue<int, vector<int>, less<int> > q11;
+
+    // 最小堆
     priority_queue<int, vector<int>, greater<int> > q3;
 
     vector<int> v = {1, 2, 3, 4, 5};
