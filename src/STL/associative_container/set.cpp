@@ -21,7 +21,7 @@ set 和 multiset 定义在头文件 set 中
 
 插入和删除操作
 
-- insert(x) 将元素 x 插入到 set 中
+- insert(x) 当容器中没有相同元素时，将元素 x 插入到 set 中
 - erase(x) 删除值为 x 的所有元素，返回删除元素的个数
 - erase(pos) 删除迭代器为 pos de 元素，要求迭代器必须合法
 - erase(first,last) 删除迭代器在 [first,last) 范围内的所有元素
