@@ -34,6 +34,8 @@ using namespace std;
 int main()
 {
 
+    cout << __cplusplus << endl;
+
     // map的定义和初始化
     map<string, int> m11;
     // map的列表初始化
