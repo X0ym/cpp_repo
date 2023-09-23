@@ -1,13 +1,13 @@
-#include<iostream>
-#include<stack>
-#include<vector>
-#include<deque>
+#include <iostream>
+#include <stack>
+#include <vector>
+#include <deque>
 
 using namespace std;
 
 /*
 
-stack<T> 容器适配器 
+stack<T> 容器适配器
 
 数据是 LIFO 方式组织的
 
@@ -35,8 +35,8 @@ int main()
     stack<int> s3(s1);
     */
 
-    stack<int, vector<int> > s11;
-    stack<string, deque<string> > s12;
+    stack<int, vector<int>> s11;
+    stack<string, deque<string>> s12;
     stack<int> s;
     s.push(1);
     s.push(2);
