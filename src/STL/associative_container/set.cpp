@@ -1,5 +1,6 @@
-#include<iostream>
-#include<set>
+#include <iostream>
+#include <set>
+#include <string>
 
 using namespace std;
 
@@ -55,9 +56,12 @@ int main()
     for (auto i : num)
     {
         auto p = s1.insert(i);
-        if (p.second) {
+        if (p.second)
+        {
             cout << "s1 insert " << i << " success." << endl;
-        } else {
+        }
+        else
+        {
             cout << "s1 insert " << i << " failed." << endl;
             cout << "s1 has " << *p.first << endl;
         }
@@ -67,13 +71,15 @@ int main()
     cout << "s1.size()= " << size_set << endl;
 
     // find(x) coutn(x)
-    if (s1.find(4) != s1.end()) {
+    if (s1.find(4) != s1.end())
+    {
         cout << "s1 can find 4" << endl;
     }
     auto n1 = s1.count(4);
     cout << "s1.count(4)= " << n1 << endl;
 
-    if (s1.find(5) == s1.end()) {
+    if (s1.find(5) == s1.end())
+    {
         cout << "s1 can not find 5" << endl;
     }
     auto n2 = s1.count(5);
@@ -81,20 +87,25 @@ int main()
 
     // lower_bound(x) upper_bound(x) erase(set<int>::iterator pos)
     set<int>::iterator it1 = s1.lower_bound(3);
-    if (it1 != s1.end()) {
+    if (it1 != s1.end())
+    {
         // 存在小于 3 的元素，可能有多个，lower_bound 返回首个元素
         s1.erase(it1);
-    } else {
+    }
+    else
+    {
         cout << "set: s1 has no 3" << endl;
     }
 
     set<int>::iterator it2 = s1.upper_bound(5);
-    if (it2 == s1.end()) {
+    if (it2 == s1.end())
+    {
         cout << "s1 has no elem larger then 5" << endl;
     }
 
     // empty() size()
-    if (!s1.empty()) {
+    if (!s1.empty())
+    {
         cout << "s1 not epmty" << endl;
     }
 
@@ -102,7 +113,8 @@ int main()
     cout << "s1.size()=" << size << endl;
 
     s1.erase(4);
-    if (s1.find(4) == s1.end()) {
+    if (s1.find(4) == s1.end())
+    {
         cout << "s1 del 4 success" << endl;
     }
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdio>
+#include <string>
 
 using namespace std;
 
@@ -62,7 +63,7 @@ iostream
 ，每次遍历，将被初始化为序列中的下一个元素值
 
 string str("some string");
-for (auto c : s) 
+for (auto c : s)
     cout << c << endl; // 输出 str 中的每个字符
 使用 auto 关键字让编译器决定 c 的类型，这里 c 的类型是 char
 
@@ -81,8 +82,47 @@ cctype 库提供了一些字符相关的有用功能
 string 支持使用下标进行随机访问
 
 */
-int main() 
+int main()
 {
-    
+
+    // push_back() append() operator+=
+    string str = "";
+    str.append({'a', 'b'}); // initializer_list<char>
+    str.append("c");
+    str.push_back('d'); // Append a single character.
+    str += "efgh";
+    str += 'i';
+    str += {'j', 'k'};
+    cout << str << endl;
+
+    // substr: 含子串 [pos, pos + count) 或 [pos, size()) 的字符串。
+    //      pos 从0开始
+    string hello = "hello";
+    cout << hello.substr(0, 1) << endl; // h
+
+    // find(str, pos): 从 pos 开始寻找首个等于给定字符序列str的子串
+    // find(ch, pos): 从 pos 开始寻找首个等于给定字符ch的字符
+    // 返回值：找到的子串的首字符位置，或在找不到这种子串时返回 npos
+    cout << hello.find("lo", 0) << endl; // 3
+    cout << hello.find('o', 0) << endl;  // 4
+
+    // size_type rfind( const basic_string& str, size_type pos = npos ) const;
+    // 寻找最后一个等于给定字符序列的子串。搜索从 pos（从右向左）开始，也就是说找到的子串不会从 pos 之后的位置开始。
+    // 如果 pos 大于等于 size() - 1 ，那么就会在整个字符串中搜索。
+    cout << hello.rfind("he", 0) << endl; // 0
+    cout << hello.rfind("he", 2) << endl;
+    cout << hello.rfind("lo", 3) << endl;
+
+    // 前缀
+    if (hello.find("hel") == 0)
+        cout << "hello start with: hel" << endl;
+    if (hello.rfind("hel", 0) == 0)
+        cout << "hello starts with: hel" << endl;
+    // 后缀
+    string s = "lo";
+    if (hello.rfind(s) == (hello.size() - s.size()))
+        cout << "hello end with: hel" << endl;
+    cout << string::npos << endl;
+
     return 0;
 }
