@@ -1,5 +1,5 @@
-#include<iostream>
-#include<queue>
+#include <iostream>
+#include <queue>
 
 using namespace std;
 
@@ -26,17 +26,18 @@ int main()
 {
     // 定义并默认初始化
     queue<int> q;
-    
+
     cout << "q.empty()= " << q.empty() << endl; // 1
     cout << boolalpha << q.empty() << endl;
     // 元素入队
-    q.push(1);  // 1
-    q.push(2);  // 2 1
+    q.push(1); // 1
+    q.push(2); // 2 1
     // 获取队首元素 front()
     cout << "q.front()= " << q.front() << endl; // 1
+    cout << "q.back()= " << q.back() << endl;   // 2
     cout << "q.size()= " << q.size() << endl;   // 2
     // 取出队首元素 pop()
-    q.pop(); // 2
+    q.pop();                                    // 2
     cout << "q.front()= " << q.front() << endl; // 2
     cout << "q.size()= " << q.size() << endl;   // 1
 
