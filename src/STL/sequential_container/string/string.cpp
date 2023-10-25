@@ -6,13 +6,34 @@ using namespace std;
 
 std::string
 
+1）Capacity
 
-字符串子串，或成为子字符串
-    - s.substr(pos, n) 返回一个 string，包含 s 从 pos 开始的 n 个字符的拷贝
-        pos 的默认值为 0，n 的默认值为 s.size() - pos ，即从 pos 开始的所有字符
-        n 超过字符串长度时，以字符串长度为准
+2）Element access
+- operator[]
+- at
+- front
+- back
 
+3）Modifier
+- operator+=：添加字符或字符串到末尾
+- append：添加字符或字符串到末尾
+- void push_back (char c)：添加单个字符到末尾
+- void pop_back()：删除最后一个字符，注意，字符串为空时，抛出 out_of_range 异常
+- replace
 
+4）String operations
+- find(str, pos)
+    Find content in string
+    Searches the string for the first occurrence of the sequence specified by its arguments.
+    When pos is specified, the search only includes characters at or after position pos, ignoring any possible occurrences that include characters before pos.
+- rfind(str, npos)
+    Find last occurrence of content in string
+    Searches the string for the last occurrence of the sequence specified by its arguments.
+    When pos is specified, the search only includes sequences of characters that begin at or before position pos, ignoring any possible match beginning after pos.
+
+- s.substr(pos, n) 返回一个 string，包含 s 从 pos 开始的 n 个字符的拷贝
+    pos 的默认值为 0，n 的默认值为 s.size() - pos ，即从 pos 开始的所有字符
+    n 超过字符串长度时，以字符串长度为准
 
 */
 int main()
@@ -71,7 +92,8 @@ int main()
     cout << hello.find('o', 0) << endl;  // 4
 
     // size_type rfind( const basic_string& str, size_type pos = npos ) const;
-    // 寻找最后一个等于给定字符序列的子串。搜索从 pos（从右向左）开始，也就是说找到的子串不会从 pos 之后的位置开始。
+    // 寻找最后一个等于给定字符序列的子串。
+    // 搜索从 pos（从右向左）开始，也就是说找到的子串不会从 pos 之后的位置开始。
     // 如果 pos 大于等于 size() - 1 ，那么就会在整个字符串中搜索。
     cout << hello.rfind("he", 0) << endl; // 0
     cout << hello.rfind("he", 2) << endl;
