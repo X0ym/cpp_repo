@@ -36,9 +36,23 @@ std::priority_queue<std::pair<int, int>,
 - pop() 删除堆顶元素，此时优先队列不能为空
 
 */
+
+struct Node
+{
+  int id;
+  int value;
+
+  Node(int _id, int _value) : id(_id), value(_value) {}
+
+  bool operator<(const Node &a) const
+  {
+    return value > a.value;
+  }
+};
+
 int main()
 {
-  // 默认最大堆，
+  // 默认最大堆
   priority_queue<int> q1;
   priority_queue<int, vector<int>> q2;
   priority_queue<int, vector<int>, less<int>> q11;
@@ -57,6 +71,25 @@ int main()
     cout << "q3.top()= " << q3.top() << endl;
     cout << endl;
   }
+
+  // 遍历
+  while (!q1.empty())
+  {
+    cout << q1.top() << " ";
+    q1.pop();
+  }
+  cout << endl;
+
+  priority_queue<Node> q;
+  for (int i = 0; i < 3; ++i)
+    q.push(Node(i, i));
+  // 遍历
+  while (!q.empty())
+  {
+    cout << q.top().value << " ";
+    q.pop();
+  }
+  cout << endl;
 
   return 0;
 }
