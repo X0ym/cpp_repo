@@ -19,11 +19,13 @@ int main()
 {
 
     // 访问
-    string s1 = "Hello World!";
+    string s1 = "Hello World!2";
     cout << "s1[2]= " << s1[2] << endl;
     
     char& a = s1.at(2);
     cout << a << endl;
+    cout << s1[1] << endl;
+    cout << s1[s1.size()-1] - '0' << endl;
 
     // size
     cout << "s1.size()= " << s1.size() << endl;

@@ -2,6 +2,20 @@
 
 using namespace std;
 
+/*
+
+# 数组
+
+数组类型：1）元素类型，2）数组名，3）数组大小，即数组中元素的个数
+
+声明数组：`typeName arrName[arrSize]` ，示例  `short months[12];`
+> 注意：数组大小必须是整型常数或 const 值，或常量表达式，即在编译时是已知的。
+
+数组初始化规则：只有在定义数组时才能使用初始化；**不能将数组赋值给另一个数组**。
+
+
+*/
+
 void test() {
     using namespace std;
     int yams[3]; 

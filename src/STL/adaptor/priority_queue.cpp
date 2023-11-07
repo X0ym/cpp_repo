@@ -1,5 +1,5 @@
-#include<iostream>
-#include<queue>
+#include <iostream>
+#include <queue>
 
 using namespace std;
 
@@ -20,7 +20,7 @@ std::priority_queue<TypeName, Container, Compare> q;
 auto cmp = [](const std::pair<int, int> &l, const std::pair<int, int> &r) {
   return l.second < r.second;
 };
-std::priority_queue<std::pair<int, int>, 
+std::priority_queue<std::pair<int, int>,
                     std::vector<std::pair<int, int> >,
                     decltype(cmp)>
                     pq(cmp);
@@ -29,34 +29,67 @@ std::priority_queue<std::pair<int, int>,
 常数复杂度
 - top() 访问堆顶元素，优先队列不能为空
 - empty() 容器是否为空
-- size() 查询容器中的元素数量   
+- size() 查询容器中的元素数量
 
 对数复杂度
 - push(x) 插入元素，对底层容器排序
 - pop() 删除堆顶元素，此时优先队列不能为空
 
 */
+
+struct Node
+{
+  int id;
+  int value;
+
+  Node(int _id, int _value) : id(_id), value(_value) {}
+
+  bool operator<(const Node &a) const
+  {
+    return value > a.value;
+  }
+};
+
 int main()
 {
-    // 默认最大堆，
-    priority_queue<int> q1;
-    priority_queue<int, vector<int> > q2;
-    priority_queue<int, vector<int>, less<int> > q11;
+  // 默认最大堆
+  priority_queue<int> q1;
+  priority_queue<int, vector<int>> q2;
+  priority_queue<int, vector<int>, less<int>> q11;
 
-    // 最小堆
-    priority_queue<int, vector<int>, greater<int> > q3;
+  // 最小堆
+  priority_queue<int, vector<int>, greater<int>> q3;
 
-    vector<int> v = {1, 2, 3, 4, 5};
+  vector<int> v = {1, 2, 3, 4, 5};
 
-    for (int i = 0; i < v.size(); i ++)
-    {
-        q1.push(v[i]);
-        q3.push(v[i]);
+  for (int i = 0; i < v.size(); i++)
+  {
+    q1.push(v[i]);
+    q3.push(v[i]);
 
-        cout << "q1.top()= " << q1.top() << endl;
-        cout << "q3.top()= " << q3.top() << endl;
-        cout << endl;
-    } 
+    cout << "q1.top()= " << q1.top() << endl;
+    cout << "q3.top()= " << q3.top() << endl;
+    cout << endl;
+  }
 
-    return 0;
+  // 遍历
+  while (!q1.empty())
+  {
+    cout << q1.top() << " ";
+    q1.pop();
+  }
+  cout << endl;
+
+  priority_queue<Node> q;
+  for (int i = 0; i < 3; ++i)
+    q.push(Node(i, i));
+  // 遍历
+  while (!q.empty())
+  {
+    cout << q.top().value << " ";
+    q.pop();
+  }
+  cout << endl;
+
+  return 0;
 }
