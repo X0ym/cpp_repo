@@ -38,6 +38,10 @@ int main()
     stack<int, vector<int>> s11;
     stack<string, deque<string>> s12;
     stack<int> s;
+
+    // 栈为空时，取栈顶元素
+    cout << "empty stack top(): " << s.top() << endl;
+
     s.push(1);
     s.push(2);
     cout << "s.size()= " << s.size() << endl;
