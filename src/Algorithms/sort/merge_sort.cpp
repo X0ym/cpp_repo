@@ -6,6 +6,12 @@ const int N = 1e6 + 10;
 
 int a[N], tmp[N];
 
+// 原地归并
+void in_place_merge(int q[], int l, int r)
+{
+}
+
+//
 void merge(int q[], int l, int r, int mid)
 {
     int k = 0, i = l, j = mid + 1;

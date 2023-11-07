@@ -17,12 +17,54 @@
 
 
 快排的核心在于如何划分区间
-1）hua
+1）分成小于 pivot 和大于等于 pivot 的左右两部分 - 参考 [Lomuto partition scheme](https://en.wikipedia.org/wiki/Quicksort#Lomuto_partition_scheme)
+算法导论介绍的就是这种划分方式
 
-C++ 
+2）分成小于等于 pivot 和大于等于 pivot 的左右两部分 - 参考 [Hoare partition scheme](https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme)
+
+划分方式1
 ```cpp
+void quick_sort(int q[], int l, int r)
+{
+    if (l >= r)
+        return;
+
+    int j = l, pivot = q[l];
+    for (int i = l + 1; i <= r; i++)
+        if (q[i] < pivot)
+            swap(q[++j], q[i]);
+    swap(q[l], q[j]);
+
+    quick_sort(q, l, j - 1);
+    quick_sort(q, j + 1, r);
+}
 
 ```
+
+划分方式2
+```cpp
+void quick_sort(int q[], int l, int r)
+{
+    if (l >= r) return;
+
+    int i = l-1, j = r+1;
+    int pivot  = q[l + r >> 1];
+    while (i < j)
+    {
+        do i++; while (q[i] < pivot);
+        do j--; while (q[j] > pivot);
+        if (i < j) swap(q[i], q[j]);
+    }
+
+    quick_sort(q, l, j);
+    quick_sort(q, j+1, r);
+}
+```
+
+## 参考
+
+[wikipedia Quicksort](https://en.wikipedia.org/wiki/Quicksort#)
+
 
 # 归并排序
 
