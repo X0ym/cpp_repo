@@ -124,3 +124,35 @@ void inPlaceMerge(vector<int> &nums, int l, int mid, int r)
 
 # 插入排序
 
+插入排序算法步骤：
+1. 从第二个元素开始遍历
+2. 对于每个遍历的元素，如果其比前一个元素小，则交换位置，
+一直到处理好前面所有元素的大小关系
+3. 循环结束，元素全部有序
+
+代码：
+```cpp
+void insert_sort1(vector<int> &nums)
+{
+    int n = nums.size();
+    for (int i = 1; i < n; i++)
+    {
+        int j = i;
+        while (j > 0 && nums[j] < nums[j - 1])
+        {
+            swap(nums[j], nums[j - 1]);
+            j--;
+        }
+    }
+}
+
+void insert_sort2(vector<int> &nums)
+{
+    int n = nums.size();
+    for (int i = 1; i < n; i++)
+    {
+        for (int j = i; j > 0 && nums[j] < nums[j - 1]; j--)
+            swap(nums[j], nums[j - 1]);
+    }
+}
+```
