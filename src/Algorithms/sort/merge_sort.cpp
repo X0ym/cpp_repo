@@ -6,9 +6,37 @@ const int N = 1e6 + 10;
 
 int a[N], tmp[N];
 
-// 原地归并
-void in_place_merge(int q[], int l, int r)
+void shift(int q[], int l, int r)
 {
+}
+
+// 原地归并
+void in_place_merge(int q[], int l, int mid, int r)
+{
+    int l1 = l, l2 = mid + 1;
+    if (q[mid] <= q[l2])
+        return;
+
+    while (l1 <= mid && l2 <= r)
+    {
+        if (q[l1] <= q[l2])
+            l1++;
+        else
+        {
+            // q[l1] > q[l2]
+            int tmp = q[l2];
+
+            int k = l2;
+            while (l2 > l1)
+                q[k] = q[--k];
+            q[l1] = tmp;
+
+            // update l1 l2
+            l1++;
+            mid++;
+            l2++;
+        }
+    }
 }
 
 //

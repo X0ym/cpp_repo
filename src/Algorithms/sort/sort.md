@@ -68,5 +68,59 @@ void quick_sort(int q[], int l, int r)
 
 # 归并排序
 
+标准归并
+```cpp
+void merge(int q[], int l, int r, int mid)
+{
+    int k = 0, i = l, j = mid + 1;
+    while (i <= mid && j <= r)
+        if (q[i] <= q[j])
+            tmp[k++] = q[i++];
+        else
+            tmp[k++] = q[j++];
+    while (i <= mid)
+        tmp[k++] = q[i++];
+    while (j <= r)
+        tmp[k++] = q[j++];
+
+    for (i = l, j = 0; i <= r; i++, j++)
+        q[i] = tmp[j];
+}
+```
+
+原地归并
+```cpp
+void inPlaceMerge(vector<int> &nums, int l, int mid, int r)
+{
+    int l1 = l, l2 = mid + 1;
+    if (nums[mid] <= nums[l2])
+        return;
+
+    while (l1 <= mid && l2 <= r)
+    {
+        if (nums[l1] <= nums[l2])
+            l1++;
+        else
+        {
+            // q[l1] > q[l2]
+            int tmp = nums[l2];
+            int k = l2;
+            while (k > l1)
+            {
+                nums[k] = nums[k - 1];
+                k--;
+            }
+            nums[l1] = tmp;
+
+            // update l1 l2
+            l1++;
+            mid++;
+            l2++;
+        }
+    }
+}
+```
+
+
 # 插入排序
 
