@@ -130,6 +130,11 @@ void inPlaceMerge(vector<int> &nums, int l, int mid, int r)
 一直到处理好前面所有元素的大小关系
 3. 循环结束，元素全部有序
 
+关键点：遍历每个元素，找到每个元素应该插入的位置
+
+时间复杂度 O(n^2) 空间复杂度 O(1)
+稳定性：稳定
+
 代码：
 ```cpp
 void insert_sort1(vector<int> &nums)
