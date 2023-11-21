@@ -53,4 +53,20 @@ int main()
     // front back
     cout << "v1.front() = " << v1.front() << endl; // v1.front() = 0
     cout << "v1.back() = " << v1.back() << endl;   // v1.back() = 100
+
+    // resize
+    vector<int> v2;
+    v2.resize(5);
+    for (auto i : v2)
+        cout << i << " "; // 默认值 0
+    cout << endl;
+
+    vector<vector<int>> v3;
+    v3.resize(5, vector<int>(5));
+    for (int i = 0; i < v3.size(); i++)
+    {
+        for (auto x : v3[i])
+            cout << x << " "; // 默认值 0
+        cout << endl;
+    }
 }
