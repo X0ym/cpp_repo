@@ -9,6 +9,8 @@ using namespace std;
     其可应用在任何具有结合律的运算中。可应用在模意义下取幂，矩阵幂等运算
 
 
+    参考：
+    [快速幂](https://oi-wiki.org/math/binary-exponentiation/)
 
 */
 
@@ -24,6 +26,18 @@ long long binpow(long long a, long long b)
         b >>= 1;
     }
     return ans;
+}
+
+// 递归版本
+long long binpow(long long a, long long b)
+{
+    if (b == 0)
+        return 1;
+    long long res = binpow(a, b / 2);
+    if (b % 2)
+        return res * res * a;
+    else
+        return res * res;
 }
 
 int main()
