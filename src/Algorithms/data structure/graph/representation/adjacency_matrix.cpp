@@ -33,8 +33,8 @@ using namespace std;
 */
 
 int n, m;                // n 个顶点 m 条边
-vector<vector<int>> adj; // 邻接矩阵
 vector<bool> vis;        // 记录顶点是否被访问过
+vector<vector<int>> adj; // 邻接矩阵
 
 bool find_edge(int u, int v)
 {
