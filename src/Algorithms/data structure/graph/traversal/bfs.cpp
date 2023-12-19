@@ -67,7 +67,7 @@ void bfs(int u)
 
     while (!q.empty())
     {
-        int x = q.top();
+        int x = q.front();
         q.pop();
         for (int i = 1; i <= n; ++i)
         {
