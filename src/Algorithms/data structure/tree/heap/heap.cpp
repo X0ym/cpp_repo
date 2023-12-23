@@ -5,16 +5,16 @@ using namespace std;
 
 const int N = 100010;
 
-int h[N], s;
+int h[N], size;
 int n, m;
 
 // 时间复杂度 O(log N)
 void down(int u)
 {
     int t = u;
-    if (u * 2 <= s && h[u * 2] < h[t])
+    if (u * 2 <= size && h[u * 2] < h[t])
         t = u * 2;
-    if (u * 2 + 1 <= s && h[u * 2 + 1] < h[t])
+    if (u * 2 + 1 <= size && h[u * 2 + 1] < h[t])
         t = u * 2 + 1;
     if (u != t)
     {
@@ -35,6 +35,5 @@ void up(int u)
 
 int main()
 {
-
     return 0;
 }
