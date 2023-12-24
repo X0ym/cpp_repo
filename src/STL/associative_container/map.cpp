@@ -88,5 +88,12 @@ int main()
 
     auto li = key_map[1];
 
+    // 遍历
+    for (map<string, int>::iterator it = m1.begin(); it != m1.end(); it++)
+        cout << it->first << " : " << it->second << endl;
+
+    for (auto it : m1)
+        cout << it.first << " : " << it.second << endl;
+
     return 0;
 }
