@@ -25,8 +25,7 @@ using namespace std;
 // u 起点 v 终点 w 权值
 struct Edge
 {
-    int u, v;
-    int w;
+    int u, v, w;
 };
 
 int n, m;       // n 个顶点，m 条边

@@ -8,11 +8,10 @@ using namespace std;
 /*
 
 spfa 是 Bellman–Ford 算法的一种实现
-即 Shortest Path Faster Algorithm
+即 Shortest Path Faster Algorithm，
+队列优化的 Bellman-Ford 算法
 
-队列优化：SPFA
-
-
+平均时间复杂度 O(m)，最坏 O(nm)
 
 */
 
