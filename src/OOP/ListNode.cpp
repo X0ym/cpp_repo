@@ -18,4 +18,14 @@ int main()
     ListNode first(0);
     ListNode second(2, &first);
     ListNode third = ListNode(3, &second);
+
+    // 指针
+    // ListNode *p, p->next = &second; // 此时结构体指针 p 未初始化
+
+    ListNode *p = new ListNode();
+
+    ListNode *q = p;
+    cout << q->val << endl;
+
+    return 0;
 }
