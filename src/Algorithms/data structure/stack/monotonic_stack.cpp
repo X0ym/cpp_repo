@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// 维护单调递增栈
+// 维护单调递增栈 栈中元素从栈顶到栈底递减，自顶向下递减，自底向上递增
 void monotonicIncStack(vector<int> nums)
 {
     int n = nums.size();
