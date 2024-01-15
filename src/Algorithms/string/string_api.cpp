@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -45,6 +46,7 @@ int main()
     // append_str();
 
     find_str();
+
 
     return 0;
 }

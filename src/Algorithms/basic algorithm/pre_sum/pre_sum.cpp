@@ -15,6 +15,7 @@ void init(vector<int> &nums)
     }
 }
 
+// 下标 [l, r] 闭区间
 int sumRange(int l, int r)
 {
     return pre[r + 1] - pre[l];

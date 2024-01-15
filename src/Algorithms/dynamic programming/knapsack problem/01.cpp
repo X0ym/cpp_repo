@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
@@ -27,12 +26,45 @@ f[i] = max(f[i], f[i - w_i] + v_i)
 
 */
 
-void 
+
+
+const int N = 1010;
+int n, m;
+int v[N], w[N];
+int f[N][N];
+
+int dp[N];
+
+// 因为 f[i][j] 仅与 f[i - 1][...] 的状态有关，因此可用滚动数组优化空间
+// 复杂度
+void fn1()
+{
+    for (int i = 1; i <= n; i++)
+        for (int j = 0; j <= m; j++)
+        {
+            f[i][j] = f[i - 1][j];
+            if (j >= v[i])
+                f[i][j] = max(f[i][j], f[i - 1][j - v[i]] + w[i]);
+        }
+}
+
+// 使用一维空间维护状态 
+void fn2()
+{
+    for (int i = 1; i <= n; i ++)
+        for (int j = m; j >= v[i]; j --)
+            dp[j] = max(dp[j], dp[j - v[i]] + w[i]);
+}
 
 int main()
 {
+    cin >> n >> m;
+    for (int i = 1; i <= n; i++)
+        cin >> v[i] >> w[i];
 
     
 
-    return 0;
+
+
+    cout << f[n][m] << endl;
 }
