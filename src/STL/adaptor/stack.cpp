@@ -30,9 +30,9 @@ int main()
 
     // 定义及初始化 std::stack<T>
     /*
-    stack<int> s1;
-    stack<int, list<int>> s2;
-    stack<int> s3(s1);
+        stack<int> s1;
+        stack<int, list<int>> s2;
+        stack<int> s3(s1);
     */
 
     stack<int, vector<int>> s11;
