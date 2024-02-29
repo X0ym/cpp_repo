@@ -32,5 +32,6 @@ void construct()
 
 int main()
 {
+    cout << "C++" << endl;
     return 0;
 }
