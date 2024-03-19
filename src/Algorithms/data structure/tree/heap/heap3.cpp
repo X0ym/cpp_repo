@@ -8,8 +8,17 @@ const int N = 100010;
 int h[N], size;
 int n, m;
 
+/*
+
+min-heap
+
+向上调整
+
+
+*/ 
 void up(int x)
 {
+
     while (x > 1 && h[x] < h[x / 2])
     {
         swap(h[x], h[x / 2]);
