@@ -44,9 +44,24 @@ struct Node
 
     Node(int _id, int _value) : id(_id), value(_value) {}
 
+    // 重载 < 操作符
     bool operator<(const Node &a) const
     {
         return value > a.value;
+    }
+};
+
+struct Point
+{
+    int x;
+    int y;
+
+    Point(int _x, int _y) : x(_x), y(_y) {}
+
+    // 重载 < 操作符
+    bool operator<(const Point &a) const
+    {
+        return x > a.x;
     }
 };
 
@@ -90,6 +105,22 @@ int main()
         q.pop();
     }
     cout << endl;
+
+
+    // min heap
+    auto cmp1 = [&](const Point& a, const Point& b) -> bool {
+        return a.x > b.x;
+    };
+    // max heap
+    auto cmp1 = [&](const Point& a, const Point& b) -> bool {
+        return a.x > b.x;
+    };
+    priority_queue<Point, vector<Point>, decltype(cmp1)> q_point(cmp1);
+
+    q_point.push(Point{2, 3});
+    q_point.push(Point{1, 2});
+    q_point.push(Point{4, 2});
+    cout << q_point.top().x << " " << q_point.top().y << endl;
 
     return 0;
 }

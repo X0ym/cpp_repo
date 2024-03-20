@@ -47,7 +47,7 @@ int main()
     {
         cout << " " << arr[i];
     }
-    sort(arr, arr + 3);
+    sort(arr, arr + 3, less<int>());
     cout << "\nAfter sort: ";
     for (int i = 0; i < 3; i++)
     {
